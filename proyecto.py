@@ -137,11 +137,12 @@ while a < 1:
 #variables de decision
 #Xij = costo de transporte de bodega i al tienda j
 #Yi = costo de instalacion de bodega i
-#B = 1 si bodega i es instalada, 0 si no
+#Bi = 1 si bodega i es instalada, 0 si no
+#Cij = 1 si bodega i satisface tienda j, 0 si no 
 
 
 #funcion objetivo
-#min Z = sumatoria de i=1 hasta I sumatoria de j=1 hasta J (Xij) + sumatoria de i=1 hasta I (Yi)
+#min Z = sumatoria de i=1 hasta I sumatoria de j=1 hasta J (Xij*Cij) + sumatoria de i=1 hasta I (Yi*Bi)
 
 #restricciones
 #emisiones <= 500 * J
