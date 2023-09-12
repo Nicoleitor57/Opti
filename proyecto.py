@@ -54,7 +54,78 @@ while a < 1:
     #capacidad de bodega i = numero aleatorio entre 2 y J/3
     #instalar bodega en almenos 40% de I
     
+    #matriz de costos de transporte
+    costos = []
+    i = 0
+    while i < I:
+        costos.append([])
+        j = 0
+        while j < J:
+            costo = ((bodegas[i][0]-tiendas[j][0])**2+(bodegas[i][1]-tiendas[j][1])**2)**(1/2)*1.25
+            costos[i].append(costo)
+            j += 1
+        i += 1
+    print("costos de transporte: ",costos)
     
+    #lista de costos de instalacion
+    costosInstalacion = []
+    i = 0
+    while i < I:
+        costo = random.randint(1000,3000)
+        costosInstalacion.append(costo)
+        i += 1
+    print("costos de instalacion: ",costosInstalacion)
+    
+    #lista de capacidades de bodegas
+    capacidades = []
+    i = 0
+    while i < I:
+        capacidad = random.randint(2,int(J/3))
+        capacidades.append(capacidad)
+        i += 1
+    print("capacidades de bodegas: ",capacidades)
+    
+    """
+    #lista de bodegas instaladas
+    bodegasInstaladas = []
+    i = 0
+    while i < I:
+        bodegasInstaladas.append(0)
+        i += 1
+    print("bodegas instaladas: ",bodegasInstaladas)
+    
+    #lista de tiendas satisfechas
+    tiendasSatisfechas = []
+    j = 0
+    while j < J:
+        tiendasSatisfechas.append(0)
+        j += 1
+    print("tiendas satisfechas: ",tiendasSatisfechas)
+    
+    #lista de bodegas con capacidad
+    bodegasConCapacidad = []
+    i = 0
+    while i < I:
+        bodegasConCapacidad.append(0)
+        i += 1
+    print("bodegas con capacidad: ",bodegasConCapacidad)
+    
+    #lista de bodegas con capacidad y no instaladas
+    bodegasConCapacidadNoInstaladas = []
+    i = 0
+    while i < I:
+        bodegasConCapacidadNoInstaladas.append(0)
+        i += 1
+    print("bodegas con capacidad y no instaladas: ",bodegasConCapacidadNoInstaladas)
+    
+    #lista de tiendas no satisfechas
+    tiendasNoSatisfechas = []
+    j = 0
+    while j < J:
+        tiendasNoSatisfechas.append(0)
+        j += 1
+    print("tiendas no satisfechas: ",tiendasNoSatisfechas)
+    """
     
     a += 1
     
@@ -66,6 +137,8 @@ while a < 1:
 #variables de decision
 #Xij = costo de transporte de bodega i al tienda j
 #Yi = costo de instalacion de bodega i
+#B = 1 si bodega i es instalada, 0 si no
+
 
 #funcion objetivo
 #min Z = sumatoria de i=1 hasta I sumatoria de j=1 hasta J (Xij) + sumatoria de i=1 hasta I (Yi)
