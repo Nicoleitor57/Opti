@@ -49,9 +49,16 @@ while a < 3:
         y = random.randint(225,375)
         tiendas.append([x,y])
         j += 1
+        
+    bodegas = []
+    bodegas.extend(bodegasAzul)
+    bodegas.extend(bodegasVerde)
+    
     print("bodegasAzul: ",bodegasAzul)
     print("bodegasVerde: ",bodegasVerde)
+    print("bodegas: ",bodegas)
     print("tiendas: ",tiendas)
+    
     
     #cada tienda satisfecha por almenos una bodega
     #costo de transporte de bodega i al tienda j = distancia euclidiana * 1,25
@@ -60,7 +67,7 @@ while a < 3:
     #instalar bodega en almenos 40% de I
     
     #matriz de costos de transporte
-    bodegas = bodegasAzul + bodegasVerde
+    
     costos = []
     i = 0
     while i < I:
